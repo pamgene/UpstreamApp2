@@ -49,4 +49,4 @@ bnMessageHandler$getDataHandler = getData
 bnMessageHandler$getPropertiesAsMapHandler = getProperties
 bnMessageHandler$setResultHandler = setResult
 
-bnshiny::startBNTestShiny('UpstreamAppTest2021', sessionType="show", bnMessageHandler=bnMessageHandler)
+bnshiny::startBNTestShiny('UpstreamApp2', sessionType="show", bnMessageHandler=bnMessageHandler)

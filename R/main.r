@@ -14,7 +14,7 @@ shinyServerRun = function(input, output, session, context) {
   output$body = renderUI({
         sidebarLayout(
                       sidebarPanel(
-                          tags$div(HTML("<strong><font color = #6895d1>Upstream Kinase Analysis-2021 Test Version</font></strong>")),
+                          tags$div(HTML("<strong><font color = #6895d1>Upstream Kinase Analysis - January 2022</font></strong>")),
                           tags$hr(),
                           actionButton("start", "Start"),
                           tags$hr(),
@@ -72,7 +72,9 @@ shinyServerRun = function(input, output, session, context) {
     }
   }
   
-  DB = UpstreamAppTest2021::UpstreamDatabase # note: hard code reference to the package name!
+  # DB = UpstreamAppTest2021::UpstreamDatabase # note: hard code reference to the package name!
+  DB = load(system.file("extdata", "211207_86402_87102_UpstreamDb.RData", package = "UpstreamApp2"))
+  DB = get(DB)
   nid = showNotification("Press Start to start the analysis.", duration = NULL, type = "message", closeButton = FALSE)
   updateSliderInput(session, "seqHom", min = min(DB$PepProtein_SeqSimilarity))
   
@@ -185,7 +187,7 @@ shinyServerShowResults = function(input, output, session, context){
   output$body = renderUI(
     sidebarLayout(
       sidebarPanel(
-        tags$div(HTML("<strong><font color = #6895d1>Upstream Kinase Analysis - 2021 Test Version</font></strong>")),
+        tags$div(HTML("<strong><font color = #6895d1>Upstream Kinase Analysis - January 2022</font></strong>")),
         tags$hr(),
         textOutput("grpText"),
         tags$hr(),
