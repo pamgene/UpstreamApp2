@@ -1,0 +1,27 @@
+---
+title: "Upstream Kinase Analysis Report"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## general
+This is an automatically generated report of your upstream kinase analysis session
+```{r session}
+print(upstream2::getSessionInfo())
+```
+
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
